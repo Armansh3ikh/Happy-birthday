@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Mahnoor 💖</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+      overflow: hidden;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .container {
+      text-align: center;
+      color: white;
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .fade-in {
+      animation: fadeIn 1s forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Balloons */
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 60px;
+      height: 80px;
+      background: red;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      animation: float 10s infinite;
+    }
+
+    .balloon::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      width: 2px;
+      height: 20px;
+      background: #555;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(-120vh); }
+    }
+
+    /* Confetti */
+    .confetti {
+      position: absolute;
+      width: 8px;
+      height: 14px;
+      background-color: gold;
+      top: -10px;
+      animation: fall 4s linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0); }
+      100% { transform: translateY(110vh) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="countdown">3</div>
+    <div id="happy" class="hidden">Happy</div>
+    <div id="birthday" class="hidden">Birthday</div>
+    <div id="name" class="hidden">Mahnoor 💖</div>
+  </div>
+
+  <audio id="music" src="https://www2.cs.uic.edu/~i101/SoundFiles/HappyBirthday.mid"></audio>
+
+  <script>
+    // Countdown + text sequence
+    let countdownEl = document.getElementById("countdown");
+    let happyEl = document.getElementById("happy");
+    let birthdayEl = document.getElementById("birthday");
+    let nameEl = document.getElementById("name");
+    let music = document.getElementById("music");
+
+    let countdown = 3;
+    let step = 0;
+
+    let timer = setInterval(() => {
+      if (countdown > 1) {
+        countdown--;
+        countdownEl.textContent = countdown;
+      } else if (step === 0) {
+        countdownEl.style.display = "none";
+        happyEl.classList.remove("hidden");
+        happyEl.classList.add("fade-in");
+        step++;
+      } else if (step === 1) {
+        birthdayEl.classList.remove("hidden");
+        birthdayEl.classList.add("fade-in");
+        step++;
+      } else if (step === 2) {
+        nameEl.classList.remove("hidden");
+        nameEl.classList.add("fade-in");
+        music.play();
+        clearInterval(timer);
+      }
+    }, 1000);
+
+    // Balloons
+    for (let i = 0; i < 10; i++) {
+      let b = document.createElement("div");
+      b.className = "balloon";
+      b.style.left = Math.random() * 100 + "vw";
+      b.style.background = `hsl(${Math.random() * 360}, 70%, 60%)`;
+      b.style.animationDuration = (6 + Math.random() * 5) + "s";
+      document.body.appendChild(b);
+    }
+
+    // Confetti
+    for (let i = 0; i < 40; i++) {
+      let c = document.createElement("div");
+      c.className = "confetti";
+      c.style.left = Math.random() * 100 + "vw";
+      c.style.backgroundColor = `hsl(${Math.random() * 360}, 80%, 50%)`;
+      c.style.animationDuration = (2 + Math.random() * 3) + "s";
+      document.body.appendChild(c);
+    }
+  </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Mahnoor 💖</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+      overflow: hidden;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .container {
+      text-align: center;
+      color: white;
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .fade-in {
+      animation: fadeIn 1s forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Balloons */
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 60px;
+      height: 80px;
+      background: red;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      animation: float 10s infinite;
+    }
+
+    .balloon::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      width: 2px;
+      height: 20px;
+      background: #555;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(-120vh); }
+    }
+
+    /* Confetti */
+    .confetti {
+      position: absolute;
+      width: 8px;
+      height: 14px;
+      background-color: gold;
+      top: -10px;
+      animation: fall 4s linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0); }
+      100% { transform: translateY(110vh) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="countdown">3</div>
+    <div id="happy" class="hidden">Happy</div>
+    <div id="birthday" class="hidden">Birthday</div>
+    <div id="name" class="hidden">Mahnoor 💖</div>
+  </div>
+
+  <audio id="music" src="https://www2.cs.uic.edu/~i101/SoundFiles/HappyBirthday.mid"></audio>
+
+  <script>
+    // Countdown + text sequence
+    let countdownEl = document.getElementById("countdown");
+    let happyEl = document.getElementById("happy");
+    let birthdayEl = document.getElementById("birthday");
+    let nameEl = document.getElementById("name");
+    let music = document.getElementById("music");
+
+    let countdown = 3;
+    let step = 0;
+
+    let timer = setInterval(() => {
+      if (countdown > 1) {
+        countdown--;
+        countdownEl.textContent = countdown;
+      } else if (step === 0) {
+        countdownEl.style.display = "none";
+        happyEl.classList.remove("hidden");
+        happyEl.classList.add("fade-in");
+        step++;
+      } else if (step === 1) {
+        birthdayEl.classList.remove("hidden");
+        birthdayEl.classList.add("fade-in");
+        step++;
+      } else if (step === 2) {
+        nameEl.classList.remove("hidden");
+        nameEl.classList.add("fade-in");
+        music.play();
+        clearInterval(timer);
+      }
+    }, 1000);
+
+    // Balloons
+    for (let i = 0; i < 10; i++) {
+      let b = document.createElement("div");
+      b.className = "balloon";
+      b.style.left = Math.random() * 100 + "vw";
+      b.style.background = `hsl(${Math.random() * 360}, 70%, 60%)`;
+      b.style.animationDuration = (6 + Math.random() * 5) + "s";
+      document.body.appendChild(b);
+    }
+
+    // Confetti
+    for (let i = 0; i < 40; i++) {
+      let c = document.createElement("div");
+      c.className = "confetti";
+      c.style.left = Math.random() * 100 + "vw";
+      c.style.backgroundColor = `hsl(${Math.random() * 360}, 80%, 50%)`;
+      c.style.animationDuration = (2 + Math.random() * 3) + "s";
+      document.body.appendChild(c);
+    }
+  </script>
+</body>
+</html>
